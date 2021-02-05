@@ -54,3 +54,35 @@ PROMPT='%B%F{25}%3~%f%b %# '
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+
+# sudo aliases
+alias sudo='sudo '
+
+# ls shortcuts
+alias ls="command ls -G"
+alias l="ls -lFG" # all files, in long format
+alias la="ls -laFG" # all files inc dotfiles, in long format
+
+# quick nav
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# git aliases
+alias gs='git status -sb'
+alias gl='git log --oneline --decorate'
+alias glv='git log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat'
+alias gco='git checkout'
+alias ga='git add .'
+alias gp='git push origin HEAD'
+alias gitrecent='git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias gitfresh='git fetch --all && git checkout master && git pull origin master'
+gc() {
+    if [ -n "$1" ]
+    then
+        git commit -m "$1"
+    else
+        git commit --amend --no-edit
+    fi
+}
