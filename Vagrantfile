@@ -45,7 +45,8 @@ Vagrant.configure("2") do |config|
         build-essential \
         tmux \
         libnss3-tools \
-        jq
+        jq \
+        autojump
 
       # Install Docker-CE & add vagrant user to docker group.
       curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -

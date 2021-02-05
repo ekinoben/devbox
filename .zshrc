@@ -1,5 +1,4 @@
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 prompt adam1
@@ -37,8 +36,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 
-
-# GIT SHELL INTEGRATION
+# Git shell integration
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
@@ -55,6 +53,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# Activate Autojump
+. /usr/share/autojump/autojump.zsh
 
 # sudo aliases
 alias sudo='sudo '
